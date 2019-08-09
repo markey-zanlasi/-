@@ -1,0 +1,183 @@
+@function px2rem($px) {
+    @return $px / 75 *1rem;
+}
+html,
+body,
+#app {
+    height: 100%;
+}
+#app {
+    display: flex;
+    flex-direction: column;
+    header {
+        height: px2rem(80);
+        background: red;
+    }
+    section {
+        flex: 1;
+        >.center {
+            height: 100%;
+            display: flex;
+            position: relative;
+           
+            >.left {
+                position: relative;
+                width: px2rem(146);
+                overflow: hidden;
+                >.mean-left {
+                    position: absolute;
+                    >ul {
+                        width: px2rem(146);
+                        background: #f8f8f8;
+                        >li {
+                            height: px2rem(80);
+                            width: px2rem(146);
+                            line-height: px2rem(80);
+                            text-align: center;
+                            &.active {
+                                color:red;
+                                background: #fff;
+                                border-left: 5px solid purple;
+                            }
+                        }
+                    }
+                }
+            }
+            >.right {
+                flex: 1;
+                >.right-top {
+                    display: flex;
+                    height: px2rem(80);
+                    line-height: px2rem(80);
+               
+                >.nav-right {
+                    flex: 1;
+                    position: relative;
+                    overflow: hidden;
+                    >.mean-right {
+                        position: absolute;
+                        >ul {
+                            display: flex;
+                            height: px2rem(76);
+                            >li {
+                                width: px2rem(137);
+                                text-align: center;
+                                &.active {
+                                    color:blue;
+                                }
+                            }
+                        }
+                    }
+                }
+                >.img {
+                    margin-top: px2rem(30);
+                    width: px2rem(40);
+                    height: px2rem(30);
+                    background: -webkit-repeating-linear-gradient(left,#fff,#fff);
+                }
+                >.icon-angle-down {
+                    padding-right: px2rem(44);
+                }
+            }
+                
+                >.right-bottom {
+                    height: px2rem(1020);
+                    >.less {
+                        position: relative;
+                        height: px2rem(1020);
+                        margin:0 px2rem(20);
+                        overflow: hidden;
+                        >.mean-less {
+                            position: absolute;
+                            // height: px2rem(1020);
+                            >h3 {
+                                margin: 0 px2rem(20);
+                                height: px2rem(62);
+                                line-height: px2rem(62);
+                                margin-top: px2rem(10);
+                                border-bottom: 1px solid #ccc;
+                                color: #ccc;
+                                font-size: 15px;
+                            }
+                            >dl {
+                                display: flex;
+                                height: px2rem(252);
+                                border-bottom: 1px solid #ccc;
+                                >dt {
+                                    margin: px2rem(46) px2rem(32) px2rem(28) px2rem(26);
+                                    width: px2rem(184);
+                                    height: px2rem(184);
+                                    >img {
+                                        display: block;
+                                        height: px2rem(184);
+                                    }
+                                }
+                                >dd {
+                                    margin-top: px2rem(50);
+                                    >h1 {
+                                        font-size: 18px;
+                                    }
+                                    >p {
+                                        margin-top: px2rem(18);
+                                        font-size: px2rem(15);
+                                        color: #ccc;
+                                    }
+                                    >small {
+                                        width: px2rem(47);
+                                        margin-top: px2rem(18);
+                                        color: red;
+
+                                    }
+                                    >.count {
+                                        display: flex;
+                                        justify-content: space-between;
+                                        position: relative;
+                                        >.num {
+                                            color: #ccc;
+                                            font-size:16px;
+                                        }
+                                        >.src {
+                                            width: px2rem(62);
+                                            height: px2rem(62);
+                                            position: absolute;
+                                            bottom: px2rem(5);
+                                            right: px2rem(30);
+                                            >img {
+                                                display: block;
+                                                height: px2rem(62);
+                                            }
+                                        }
+                                        >.count-num {
+                                            display: none;
+                                            text-align: center;
+                                            border: 1px solid black;
+                                            >input {
+                                                width: px2rem(30);
+                                            
+                                            }
+                                            >span {
+                                                display: inline-block;
+                                                width: px2rem(30);
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+
+                    }
+                }
+            }
+        }
+    }
+    footer {
+        display: flex;
+        justify-content: center;
+        justify-content: space-around;
+        align-items: center;
+        height: px2rem(92 );
+        text-align: center;
+        border-top: 1px solid #ccc;
+       
+    }
+}

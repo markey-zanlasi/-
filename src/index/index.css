@@ -1,0 +1,209 @@
+html,
+body,
+#app {
+  height: 100%;
+}
+
+#app {
+  display: flex;
+  flex-direction: column;
+}
+
+#app header {
+  height: 1.06667rem;
+  background: red;
+}
+
+#app section {
+  flex: 1;
+}
+
+#app section > .center {
+  height: 100%;
+  display: flex;
+  position: relative;
+}
+
+#app section > .center > .left {
+  position: relative;
+  width: 1.94667rem;
+  overflow: hidden;
+}
+
+#app section > .center > .left > .mean-left {
+  position: absolute;
+}
+
+#app section > .center > .left > .mean-left > ul {
+  width: 1.94667rem;
+  background: #f8f8f8;
+}
+
+#app section > .center > .left > .mean-left > ul > li {
+  height: 1.06667rem;
+  width: 1.94667rem;
+  line-height: 1.06667rem;
+  text-align: center;
+}
+
+#app section > .center > .left > .mean-left > ul > li.active {
+  color: red;
+  background: #fff;
+  border-left: 5px solid purple;
+}
+
+#app section > .center > .right {
+  flex: 1;
+}
+
+#app section > .center > .right > .right-top {
+  display: flex;
+  height: 1.06667rem;
+  line-height: 1.06667rem;
+}
+
+#app section > .center > .right > .right-top > .nav-right {
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+}
+
+#app section > .center > .right > .right-top > .nav-right > .mean-right {
+  position: absolute;
+}
+
+#app section > .center > .right > .right-top > .nav-right > .mean-right > ul {
+  display: flex;
+  height: 1.01333rem;
+}
+
+#app section > .center > .right > .right-top > .nav-right > .mean-right > ul > li {
+  width: 1.82667rem;
+  text-align: center;
+}
+
+#app section > .center > .right > .right-top > .nav-right > .mean-right > ul > li.active {
+  color: blue;
+}
+
+#app section > .center > .right > .right-top > .img {
+  margin-top: 0.4rem;
+  width: 0.53333rem;
+  height: 0.4rem;
+  background: -webkit-repeating-linear-gradient(left, #fff, #fff);
+}
+
+#app section > .center > .right > .right-top > .icon-angle-down {
+  padding-right: 0.58667rem;
+}
+
+#app section > .center > .right > .right-bottom {
+  height: 13.6rem;
+}
+
+#app section > .center > .right > .right-bottom > .less {
+  position: relative;
+  height: 13.6rem;
+  margin: 0 0.26667rem;
+  overflow: hidden;
+}
+
+#app section > .center > .right > .right-bottom > .less > .mean-less {
+  position: absolute;
+}
+
+#app section > .center > .right > .right-bottom > .less > .mean-less > h3 {
+  margin: 0 0.26667rem;
+  height: 0.82667rem;
+  line-height: 0.82667rem;
+  margin-top: 0.13333rem;
+  border-bottom: 1px solid #ccc;
+  color: #ccc;
+  font-size: 15px;
+}
+
+#app section > .center > .right > .right-bottom > .less > .mean-less > dl {
+  display: flex;
+  height: 3.36rem;
+  border-bottom: 1px solid #ccc;
+}
+
+#app section > .center > .right > .right-bottom > .less > .mean-less > dl > dt {
+  margin: 0.61333rem 0.42667rem 0.37333rem 0.34667rem;
+  width: 2.45333rem;
+  height: 2.45333rem;
+}
+
+#app section > .center > .right > .right-bottom > .less > .mean-less > dl > dt > img {
+  display: block;
+  height: 2.45333rem;
+}
+
+#app section > .center > .right > .right-bottom > .less > .mean-less > dl > dd {
+  margin-top: 0.66667rem;
+}
+
+#app section > .center > .right > .right-bottom > .less > .mean-less > dl > dd > h1 {
+  font-size: 18px;
+}
+
+#app section > .center > .right > .right-bottom > .less > .mean-less > dl > dd > p {
+  margin-top: 0.24rem;
+  font-size: 0.2rem;
+  color: #ccc;
+}
+
+#app section > .center > .right > .right-bottom > .less > .mean-less > dl > dd > small {
+  width: 0.62667rem;
+  margin-top: 0.24rem;
+  color: red;
+}
+
+#app section > .center > .right > .right-bottom > .less > .mean-less > dl > dd > .count {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+}
+
+#app section > .center > .right > .right-bottom > .less > .mean-less > dl > dd > .count > .num {
+  color: #ccc;
+  font-size: 16px;
+}
+
+#app section > .center > .right > .right-bottom > .less > .mean-less > dl > dd > .count > .src {
+  width: 0.82667rem;
+  height: 0.82667rem;
+  position: absolute;
+  bottom: 0.06667rem;
+  right: 0.4rem;
+}
+
+#app section > .center > .right > .right-bottom > .less > .mean-less > dl > dd > .count > .src > img {
+  display: block;
+  height: 0.82667rem;
+}
+
+#app section > .center > .right > .right-bottom > .less > .mean-less > dl > dd > .count > .count-num {
+  display: none;
+  text-align: center;
+  border: 1px solid black;
+}
+
+#app section > .center > .right > .right-bottom > .less > .mean-less > dl > dd > .count > .count-num > input {
+  width: 0.4rem;
+}
+
+#app section > .center > .right > .right-bottom > .less > .mean-less > dl > dd > .count > .count-num > span {
+  display: inline-block;
+  width: 0.4rem;
+}
+
+#app footer {
+  display: flex;
+  justify-content: center;
+  justify-content: space-around;
+  align-items: center;
+  height: 1.22667rem;
+  text-align: center;
+  border-top: 1px solid #ccc;
+}

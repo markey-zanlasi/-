@@ -1,0 +1,47 @@
+.clear-fix:after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  clear: both;
+}
+
+.clear-fix {
+  zoom: 1;
+}
+
+.fixed-width {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.main-title > h3 {
+  text-align: center;
+}
+
+.main-title > h3 > span {
+  font-size: 28px;
+  color: #015ba2;
+  font-weight: 600;
+  padding: 0 30px;
+  position: relative;
+  z-index: 1;
+}
+
+.main-title > h3.underline-blue:after {
+  content: '';
+  display: block;
+  border-bottom: 2px solid #015ba2;
+  position: relative;
+  top: -18px;
+}
+
+.main-title > p {
+  text-align: center;
+  margin: 15px 0;
+}
+
+.box-f9f9f9 {
+  background: #f9f9f9;
+}
