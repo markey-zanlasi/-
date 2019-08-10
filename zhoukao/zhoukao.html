@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    var data = [
+        { value: 335, name: '直接访问', color: "rgb(213, 58, 53)" },
+        { value: 310, name: '邮件营销', color: "rgb(51, 75, 92)" },
+        { value: 234, name: '联盟广告', color: "rgb(106, 176, 184)" },
+        { value: 135, name: '视频广告', color: "rgb(233, 143, 111)" },
+        { value: 1548, name: '搜索引擎', color: "rgb(145, 199, 174)" }
+    ]
+    const canvas = document.createElement('canvas');
+    const w_h = 1000;
+    canvas.width = w_h;
+    canvas.height = w_h;
+    canvas.style.border = ' 1px solid #ccc';
+    document.body.appendChild(canvas);
+    const ctx = canvas.getContext('2d');
+    // 第一个矩形
+    ctx.beginPath();
+    ctx.moveTo(20, 10);
+    ctx.arcTo(100, 10, 100, 20, 10);
+    ctx.arcTo(100, 50, 90, 50, 10);
+    ctx.arcTo(10, 50, 10, 40, 10);
+    ctx.arcTo(10, 10, 20, 10, 10);
+    ctx.fillStyle = '#c53834';
+    ctx.fill()
+    ctx.lineWidth = 1;
+    ctx.stroke();
+
+
+
+    // 第二个矩形
+    ctx.beginPath();
+    ctx.moveTo(20, 70);
+    ctx.arcTo(100, 70, 100, 80, 10);
+    ctx.arcTo(100, 110, 90, 110, 10);
+    ctx.arcTo(10, 110, 10, 100, 10);
+    ctx.arcTo(10, 70, 20, 70, 10);
+    ctx.lineWidth = 1;
+    ctx.fillStyle = '#2f4554';
+    ctx.fill();
+    ctx.strokeStyle = 'black';
+
+    ctx.stroke();
+    // 第三个矩形
+    ctx.beginPath();
+    ctx.moveTo(20, 130);
+    ctx.arcTo(100, 130, 100, 140, 10);
+    ctx.arcTo(100, 170, 90, 170, 10);
+    ctx.arcTo(10, 170, 10, 160, 10);
+    ctx.arcTo(10, 130, 20, 130, 10);
+    ctx.lineWidth = 1;
+    ctx.fillStyle = '#61a0a8';
+    ctx.fill();
+    ctx.strokeStyle = 'black';
+    ctx.stroke();
+
+    ctx.beginPath();
+    ctx.moveTo(20, 190);
+    ctx.arcTo(100, 190, 100, 200, 10);
+    ctx.arcTo(100, 230, 90, 230, 10);
+    ctx.arcTo(10, 230, 10, 220, 10);
+    ctx.arcTo(10, 190, 20, 190, 10);
+    ctx.lineWidth = 1;
+    ctx.fillStyle = '#d48265';
+    ctx.fill();
+    ctx.strokeStyle = 'black';
+    ctx.stroke();
+
+    ctx.beginPath();
+    ctx.moveTo(20, 250);
+    ctx.arcTo(100, 250, 100, 260, 10);
+    ctx.arcTo(100, 290, 90, 290, 10);
+    ctx.arcTo(10, 290, 10, 280, 10);
+    ctx.arcTo(10, 250, 20, 250, 10);
+    ctx.lineWidth = 1;
+    ctx.fillStyle = '#91c7ae';
+    ctx.fill();
+    ctx.strokeStyle = 'black';
+    ctx.stroke();
+
+
+    // 首先我们要将数据设置为空数组
+    var valueArr = [];
+    var colorArr = [];
+    var nameArr = [];
+    // 获取到数据并将其push到数组
+    for (var i = 0; i < data.length; i++) {
+        valueArr.push(JSON.parse(JSON.stringify(data[i].value)));
+        nameArr.push(JSON.parse(JSON.stringify(data[i].name)));
+        colorArr.push(JSON.parse(JSON.stringify(data[i].color)));
+    }
+    // 求和
+    var numArr = valueArr.reduce(function (pre, cur) {
+        return pre + cur;
+    });
+    // 算出度数，赋值
+    var deg = Math.PI / 180;
+
+    // 算出一份所占的比例
+    var preDeg = 2 * Math.PI / numArr;
+
+    // 双圆
+    Yuan();
+    function Yuan() {
+        var startDeg = 0;
+        for (var i = 0; i < valueArr.length; i++) {
+            var endDeg = valueArr[i] * preDeg;
+            ctx.beginPath();
+            ctx.fillStyle = colorArr[i];
+            ctx.moveTo(350, 350);
+            ctx.arc(400, 400, 200, startDeg, startDeg + endDeg, false);
+            ctx.closePath();
+            ctx.fill();
+            startDeg += endDeg;
+        }
+        ctx.save();
+        ctx.beginPath();
+        // 画内圆，将填充色变为白色
+        ctx.arc(400, 400, 150, 0, 2 * Math.PI, true);
+        ctx.fillStyle = '#fff';
+        ctx.fill();
+        ctx.closePath();
+    }
+
+
+    People()
+    function People() {
+        // 圆形
+        ctx.beginPath();
+        ctx.moveTo(750, 750);
+        ctx.arc(750, 750, 200, 0, 2 * Math.PI);
+        ctx.fillStyle = 'yellow';
+        ctx.fill();
+        ctx.closePath();
+        // 嘴巴
+        ctx.beginPath();
+        ctx.moveTo(750, 750);
+        ctx.arc(750, 750, 200, 0, 1 / 12 * Math.PI);
+        ctx.fillStyle = '#fff';
+        ctx.fill();
+        ctx.closePath();
+
+        // 眼睛
+        ctx.beginPath();
+        ctx.moveTo(700, 220);
+        ctx.arc(790, 680, 30, 0, 2 * Math.PI);
+        ctx.fillStyle = '#fff';
+        ctx.fill();
+        ctx.closePath();
+
+        // 眼珠
+        ctx.beginPath();
+        ctx.moveTo(790, 700);
+        ctx.arc(790, 680, 20, 0, 2 * Math.PI);
+        ctx.fillStyle = 'black';
+        ctx.fill();
+        ctx.stroke()
+
+    }
+
+    ctx.font = "bold 20px 楷体";
+    ctx.fillStyle = 'rgb(213, 58, 53)';
+    ctx.textBaseline = 'middle';
+    ctx.fillText('直接访问', 120, 30);
+    ctx.fillText('邮件营销',120,90)
+    ctx.fillText('联盟广告',120,150);
+    ctx.fillText('视频广告',120,210);
+    ctx.fillText('搜索引擎',120,270);
+    ctx.stroke()
+</script>
+
+</html>
